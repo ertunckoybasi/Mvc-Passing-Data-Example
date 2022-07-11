@@ -1,0 +1,31 @@
+﻿<h3>@TempData["Header"]</h3>
+
+<div>
+    <table class="table table-bordered table-responsive table-hover">
+        <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>PriceUri</th>
+        </tr>
+
+        @{
+            var data = (List<Product>)TempData["ProductList"];
+        }
+
+        @foreach (Product item in data)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Category</td>
+                <td>@item.Description</td>
+                <td>@item.Price</td>
+                <td>@item.PictureUri</td>
+            </tr>
+        }
+    </table>
+
+</div>

@@ -1,0 +1,60 @@
+﻿@model Tuple<IEnumerable<Product>,IEnumerable<Employee>>
+
+<h3>@ViewData["FirstDataHeader"]</h3>
+
+<div>
+    <table class="table table-bordered table-responsive table-hover">
+        <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>PriceUri</th>
+        </tr>
+
+        
+
+        @foreach (Product item in Model.Item1)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Category</td>
+                <td>@item.Description</td>
+                <td>@item.Price</td>
+                <td>@item.PictureUri</td>
+            </tr>
+        }
+    </table>
+
+</div>
+
+<br />
+<br />
+
+<h3>@ViewData["SecondDataHeader"] </h3>
+
+<div>
+    <table class="table table-bordered table-responsive table-hover">
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>JobTitle</th>
+            <th>Job Description</th>
+        </tr>
+
+        @foreach (Employee iteme in Model.Item2)
+        {
+            <tr>
+                <td>@iteme.Id</td>
+                <td>@iteme.FirstName</td>
+                <td>@iteme.LastName</td>
+                <td>@iteme.JobTitle</td>
+                <td>@iteme.JobDescription</td>
+            </tr>
+        }
+    </table>
+
+</div>
